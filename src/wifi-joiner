@@ -1,0 +1,104 @@
+#!/usr/bin/python
+# -*- Mode: Python; coding: utf-8; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*- 
+#
+# main.py
+# Copyright (C) 2014 Frank Schreiner <m0ses@samaxi.de>
+# 
+# wifi-joiner-gtk is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# wifi-joiner-gtk is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License along
+# with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+from gi.repository import Gtk, GdkPixbuf, Gdk
+from gi.repository.GdkPixbuf import InterpType
+import os, sys
+import qrcode
+import StringIO
+
+
+#Comment the first line and uncomment the second before installing
+#or making the tarball (alternatively, use project variables)
+UI_FILE = "src/WifiJoiner-gtk.ui"
+#UI_FILE = "/usr/local/share/WifiJoiner-gtk/ui/WifiJoiner-gtk.ui"
+
+class WIFIJoiner:
+	def __init__(self):
+		return
+		
+
+	def create_image(self,data):
+
+		# create QR Code image
+		qr = qrcode.QRCode()
+		qr.add_data(data)
+		qr.make(fit=True)
+		img = qr.make_image()
+
+		# convert img from PIL format to pixbuf
+		buff = StringIO.StringIO()
+		img.save(buff, 'ppm')
+		contents = buff.getvalue()      
+		buff.close()
+		loader = GdkPixbuf.PixbufLoader.new_with_type('pnm')
+		loader.write(contents)
+		pixbuf = loader.get_pixbuf()    
+		loader.close()
+		width  = 400
+		height = 400
+		pixbuf = pixbuf.scale_simple(width, height, InterpType.BILINEAR)
+		return pixbuf
+		
+        # self.qrcode = Gtk.Image()
+        # self.gui.img_qrcode.set_from_pixbuf(pixbuf)
+        #img_frame = Gtk.Box()
+        #img_frame.pack_start(self.qrcode,True,True,0)
+
+        #self.add(img_frame)
+
+
+	
+class GUI:
+	def __init__(self):
+
+		self.builder = Gtk.Builder()
+		self.builder.add_from_file(UI_FILE)
+		self.builder.connect_signals(self)
+
+		window = self.builder.get_object('window')
+
+
+		window.show_all()
+
+	def destroy(window, self):
+		Gtk.main_quit()
+
+	def create_qrcode_clicked_cb(self,arg1):
+		grid1 = self.builder.get_object('grid1')
+		data = {
+			'security': self.builder.get_object('security').get_active_text(),
+			'encrypted': self.builder.get_object('encrypted').get_active_text(),
+			'ssid': self.builder.get_object('ssid').get_text(),
+			'secret': self.builder.get_object('secret').get_text()	
+		}
+
+		wj = WIFIJoiner()
+		pb = wj.create_image(data)
+
+		img = self.builder.get_object('img_qrcode')
+		img.set_from_pixbuf(pb)
+		
+def main():
+	app = GUI()
+	Gtk.main()
+		
+if __name__ == "__main__":
+	sys.exit(main())
+

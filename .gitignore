@@ -1,0 +1,6 @@
+*~
+*.sw?
+.anjuta
+.anjuta_sym_db.db
+autom4te.cache/
+WifiJoiner-gtk.anjuta
