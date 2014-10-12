@@ -1,10 +1,10 @@
 ## Process this file with automake to produce Makefile.in
 ## Created by Anjuta
 
+SUBDIRS = icons
 
 uidir = $(pkgdatadir)/ui
 ui_DATA = WifiJoiner-gtk.ui
-
 
 ## The main script
 bin_SCRIPTS = wifi-joiner
@@ -26,3 +26,8 @@ uninstall-local:
 	-rm -r $(uidir)
 
 	-rm -r $(pkgdatadir)
+
+wifi-joiner: wifi-joiner.in
+	-[ -f $@ ] && rm -f $@
+	$(SED) -e "s:[@]uidir@:$(uidir):" $< > $@
+	chmod 755 $@

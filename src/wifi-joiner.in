@@ -26,8 +26,8 @@ import StringIO
 
 #Comment the first line and uncomment the second before installing
 #or making the tarball (alternatively, use project variables)
-UI_FILE = "src/WifiJoiner-gtk.ui"
-#UI_FILE = "/usr/local/share/WifiJoiner-gtk/ui/WifiJoiner-gtk.ui"
+#UI_FILE = "src/WifiJoiner-gtk.ui"
+UI_FILE = "@uidir@/WifiJoiner-gtk.ui"
 
 class WIFIJoiner:
 	def __init__(self):
@@ -54,16 +54,8 @@ class WIFIJoiner:
 		width  = 400
 		height = 400
 		pixbuf = pixbuf.scale_simple(width, height, InterpType.BILINEAR)
+
 		return pixbuf
-		
-        # self.qrcode = Gtk.Image()
-        # self.gui.img_qrcode.set_from_pixbuf(pixbuf)
-        #img_frame = Gtk.Box()
-        #img_frame.pack_start(self.qrcode,True,True,0)
-
-        #self.add(img_frame)
-
-
 	
 class GUI:
 	def __init__(self):
@@ -81,7 +73,6 @@ class GUI:
 		Gtk.main_quit()
 
 	def create_qrcode_clicked_cb(self,arg1):
-		grid1 = self.builder.get_object('grid1')
 		data = {
 			'security': self.builder.get_object('security').get_active_text(),
 			'encrypted': self.builder.get_object('encrypted').get_active_text(),

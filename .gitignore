@@ -4,3 +4,6 @@
 .anjuta_sym_db.db
 autom4te.cache/
 WifiJoiner-gtk.anjuta
+Makefile
+Makefile.in
+src/wifi-joiner
