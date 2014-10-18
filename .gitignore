@@ -6,3 +6,8 @@ autom4te.cache/
 WifiJoiner-gtk.anjuta
 Makefile
 src/wifi-joiner
+config.log
+config.status
+po/POTFILES
+po/stamp-it
+stamp-h1
