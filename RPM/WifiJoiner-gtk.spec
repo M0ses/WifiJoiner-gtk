@@ -23,12 +23,12 @@ Summary:        A tool to create QR-Codes containing WIFI credentials
 Url:            https://github.com/M0ses/WifiJoiner-gtk
 Group:          Productivity/Networking/Other 
 Source:         %{name}-%{version}.tar.bz2
-BuildRequires:  python3
+BuildRequires:  python
 BuildRequires:  intltool
+Requires:       python-qrcode
 # PreReq:
 # Provides:
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-Requires:       python-qrcode
 %description
 A tool to create QR-Codes containing your WIFI credentials, which can be read
 by WifiJoiner, an android app which you can find under
