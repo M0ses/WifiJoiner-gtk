@@ -55,6 +55,8 @@ make install DESTDIR=%{buildroot} %{?_smp_mflags}
 %doc README COPYING AUTHORS ChangeLog INSTALL NEWS
 %dir /usr/bin
 %dir /usr/lib
+%dir /usr/lib/python2.7/
+%dir /usr/lib/python2.7/site-packages/
 %dir /usr/lib/python2.7/site-packages/wifi_joiner_gtk
 %dir /usr/share/doc/wifijoiner-gtk
 %dir /usr/share/wifijoiner-gtk
