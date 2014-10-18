@@ -26,6 +26,8 @@ Source:         %{name}-%{version}.tar.bz2
 BuildRequires:  python
 BuildRequires:  intltool
 Requires:       python-qrcode
+Requires:       python-Pillow
+
 # PreReq:
 # Provides:
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
