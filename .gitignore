@@ -5,5 +5,4 @@
 autom4te.cache/
 WifiJoiner-gtk.anjuta
 Makefile
-Makefile.in
 src/wifi-joiner
