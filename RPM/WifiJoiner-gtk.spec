@@ -24,6 +24,7 @@ Url:            https://github.com/M0ses/WifiJoiner-gtk
 Group:          Productivity/Networking/Other 
 Source:         %{name}-%{version}.tar.bz2
 BuildRequires:  python3
+BuildRequires:  intltool
 # PreReq:
 # Provides:
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
