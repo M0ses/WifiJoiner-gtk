@@ -52,7 +52,12 @@ make install DESTDIR=%{buildroot} %{?_smp_mflags}
 
 %files
 %defattr(-,root,root)
-%doc README COPYING AUTHORS ChangeLog INSTALL NEWS
+%doc /usr/share/doc/wifijoiner-gtk/AUTHORS
+%doc /usr/share/doc/wifijoiner-gtk/COPYING
+%doc /usr/share/doc/wifijoiner-gtk/ChangeLog
+%doc /usr/share/doc/wifijoiner-gtk/INSTALL
+%doc /usr/share/doc/wifijoiner-gtk/NEWS
+%doc /usr/share/doc/wifijoiner-gtk/README
 %dir /usr/bin
 %dir /usr/lib
 %dir /usr/lib/python2.7/
@@ -65,6 +70,7 @@ make install DESTDIR=%{buildroot} %{?_smp_mflags}
 %dir /usr/share/wifijoiner-gtk/ui/icons/36x36
 %dir /usr/share/wifijoiner-gtk/ui/icons/48x48
 %dir /usr/share/wifijoiner-gtk/ui/icons/72x72
+
 /usr/bin/wifi-joiner
 /usr/lib/python2.7/site-packages/wifi_joiner_gtk/wifi-joiner
 /usr/share/wifijoiner-gtk/ui/WifiJoiner-gtk.ui
