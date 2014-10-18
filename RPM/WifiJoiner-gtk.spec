@@ -22,7 +22,7 @@ License:        GPL-3.0
 Summary:        A tool to create QR-Codes containing WIFI credentials
 Url:            https://github.com/M0ses/WifiJoiner-gtk
 Group:          Productivity/Networking/Other 
-Source:         %{name}-%{version}-%{release}.tar.bz2
+Source:         %{name}-%{version}.tar.bz2
 # BuildRequires:
 # PreReq:
 # Provides:
