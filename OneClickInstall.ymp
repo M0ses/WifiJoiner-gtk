@@ -1,0 +1,32 @@
+<metapackage xmlns:os="http://opensuse.org/Standards/One_Click_Install" xmlns="http://opensuse.org/Standards/One_Click_Install">
+  <group>
+    <name>WifiJoiner GTK - A GUI to create QR-Codes for WifiJoiner</name>
+    <summary>An easy way to install the WifiJoiner GTK and all the needed libraries.</summary>
+    <description>By installing  WifiJoiner GTK from here you get a GUI to create QR-Codes with your Wifi credentiials which can be used by WifiJoiner for Android</description>
+    <repositories>
+      <repository recommended="true">
+        <name>Python</name>
+        <summary></summary>
+        <description></description>
+        <url>http://download.opensuse.org/repositories/devel:/languages:/python/openSUSE_13.1/</url>
+      </repository>
+      <repository recommended="false">
+        <name>home:M0ses</name>
+        <url>http://download.opensuse.org/repositories/home:/M0ses/openSUSE_13.1/</url>
+      </repository>
+    </repositories>
+    <software>
+      <item>
+        <name>WifiJoiner-gtk</name>
+        <summary>A tool to create QR-Codes containing WIFI credentials</summary>
+        <description>A tool to create QR-Codes containing your WIFI credentials, which can be read
+by WifiJoiner, an android app which you can find under
+
+https://play.google.com/store/apps/details?id=com.proj.wifijoiner&hl=de
+
+
+</description>
+      </item>
+    </software>
+  </group>
+</metapackage>
