@@ -25,6 +25,9 @@ Group:          Productivity/Networking/Other
 Source:         %{name}-%{version}.tar.bz2
 BuildRequires:  python
 BuildRequires:  intltool
+BuildRequires:  automake
+BuildRequires:  autoconf
+BuildRequires:  glib2-devel
 Requires:       python-qrcode
 Requires:       python-Pillow
 
