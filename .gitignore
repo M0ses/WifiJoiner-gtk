@@ -11,3 +11,12 @@ config.status
 po/POTFILES
 po/stamp-it
 stamp-h1
+Makefile.in
+aclocal.m4
+configure
+po/Makefile.in
+src/Makefile.in
+src/icons/36x36/Makefile.in
+src/icons/48x48/Makefile.in
+src/icons/72x72/Makefile.in
+src/icons/Makefile.in

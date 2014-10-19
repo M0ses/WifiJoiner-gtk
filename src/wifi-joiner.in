@@ -88,15 +88,11 @@ class GUI:
 		
 	def switch_password_field(self,checkbutton):
 		secret_field = self.builder.get_object('secret')
-		print "Toggled"
 		if ( checkbutton.get_active() ):
-			print "Setting visibility to true"
 			secret_field.set_visibility(True)
 		else:
-			print "Setting visibility to false"
 			secret_field.set_visibility(False)
 
-		print "Visibility: %r" % secret_field.get_visibility()
 		
 def main():
 	app = GUI()
