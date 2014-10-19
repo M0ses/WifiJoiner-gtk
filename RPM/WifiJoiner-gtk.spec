@@ -45,7 +45,6 @@ https://play.google.com/store/apps/details?id=com.proj.wifijoiner&hl=de
 %setup -q
 
 %build
-# %configure --prefix=/usr
 ./autogen.sh --prefix=/usr
 make %{?_smp_mflags}
 
