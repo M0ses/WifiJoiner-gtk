@@ -16,6 +16,9 @@ wifi_joiner_gtkdir = $(pythondir)/wifi_joiner_gtk
 wifi_joiner_gtk_PYTHON = \
 	wifi-joiner
 
+desktopdir = $(prefix)/share/applications
+
+desktop_DATA = wifijoiner-gtk.desktop
 
 EXTRA_DIST = $(ui_DATA)
 

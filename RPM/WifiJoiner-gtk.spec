@@ -15,7 +15,7 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
-Name:           WifiJoiner-gtk
+Name:           wifijoiner-gtk
 Version:        0.0.1
 Release:        0.1
 License:        GPL-3.0
@@ -45,40 +45,34 @@ https://play.google.com/store/apps/details?id=com.proj.wifijoiner&hl=de
 %setup -q
 
 %build
-./autogen.sh --prefix=/usr
+./autogen.sh --prefix=/usr --docdir=%{_defaultdocdir}/%{name}
 make %{?_smp_mflags}
 
 %install
 make install DESTDIR=%{buildroot} %{?_smp_mflags}
 
 %post
+%icon_theme_cache_post
 
 %postun
+%icon_theme_cache_postun
 
 %files
 %defattr(-,root,root)
-%dir /usr/bin
-%dir /usr/lib
-%dir /usr/lib/python2.7/
-%dir /usr/lib/python2.7/site-packages/
 %dir /usr/lib/python2.7/site-packages/wifi_joiner_gtk
-%dir /usr/share/doc/wifijoiner-gtk
-%dir /usr/share/wifijoiner-gtk
-%dir /usr/share/wifijoiner-gtk/ui
-%dir /usr/share/wifijoiner-gtk/ui/icons
-%dir /usr/share/wifijoiner-gtk/ui/icons/36x36
-%dir /usr/share/wifijoiner-gtk/ui/icons/48x48
-%dir /usr/share/wifijoiner-gtk/ui/icons/72x72
-/usr/bin/wifi-joiner
-/usr/lib/python2.7/site-packages/wifi_joiner_gtk/wifi-joiner
-/usr/share/wifijoiner-gtk/ui/WifiJoiner-gtk.ui
-/usr/share/wifijoiner-gtk/ui/icons/36x36/WifiJoiner-gtk.png
-/usr/share/wifijoiner-gtk/ui/icons/48x48/WifiJoiner-gtk.png
-/usr/share/wifijoiner-gtk/ui/icons/72x72/WifiJoiner-gtk.png
-/usr/share/doc/wifijoiner-gtk/AUTHORS
-/usr/share/doc/wifijoiner-gtk/COPYING
-/usr/share/doc/wifijoiner-gtk/ChangeLog
-/usr/share/doc/wifijoiner-gtk/INSTALL
-/usr/share/doc/wifijoiner-gtk/NEWS
-/usr/share/doc/wifijoiner-gtk/README
-
+%dir %{_defaultdocdir}/%{name}
+%dir %{_datarootdir}/wifijoiner-gtk
+%dir %{_datarootdir}/wifijoiner-gtk/ui
+%{_bindir}/wifi-joiner
+%{_libexecdir}/python2.7/site-packages/wifi_joiner_gtk/wifi-joiner
+%{_defaultdocdir}/%{name}/AUTHORS
+%{_defaultdocdir}/%{name}/COPYING
+%{_defaultdocdir}/%{name}/ChangeLog
+%{_defaultdocdir}/%{name}/INSTALL
+%{_defaultdocdir}/%{name}/NEWS
+%{_defaultdocdir}/%{name}/README
+%{_datarootdir}/wifijoiner-gtk/ui/WifiJoiner-gtk.ui
+%{_datarootdir}/icons/hicolor/36x36/apps/wifijoiner-gtk.png
+%{_datarootdir}/icons/hicolor/48x48/apps/wifijoiner-gtk.png
+%{_datarootdir}/icons/hicolor/72x72/apps/wifijoiner-gtk.png
+%{_datarootdir}/applications/wifijoiner-gtk.desktop

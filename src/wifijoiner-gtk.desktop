@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[de]=Ein Programm zur Erstellung von QR-Codes für WifiJoiner für Android
+Comment=Ein Programm zur Erstellung von QR-Codes für WifiJoiner für Android
+Exec=wifi-joiner
+GenericName[de]=WifiJoiner-gtk
+GenericName=WifiJoiner-gtk
+Icon=wifijoiner-gtk
+MimeType=
+Name[de]=WifiJoiner-gtk
+Name=WifiJoiner-gtk
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

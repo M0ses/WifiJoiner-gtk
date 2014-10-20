@@ -65,8 +65,11 @@ class GUI:
 		self.builder.connect_signals(self)
 
 		window = self.builder.get_object('window')
-
-
+                
+                #wj_icon = self.builder.get_object('WifiJoiner_icon')
+                #theme = Gtk.IconTheme.get_default()
+                #ico = theme.load_icon('wifijoiner-gtk',48,0)
+                #wj_icon.set_from_pixbuf(ico)
 		window.show_all()
 
 	def destroy(window, self):
