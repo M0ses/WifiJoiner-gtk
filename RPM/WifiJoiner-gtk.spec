@@ -52,7 +52,7 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot} %{?_smp_mflags}
 
-%suse_update_desktop_file -r %{name} Utility
+%suse_update_desktop_file -r %{name} %{name} System Network
 
 cat %{buildroot}/usr/share/applications/wifijoiner-gtk.desktop
 
