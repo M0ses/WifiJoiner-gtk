@@ -29,6 +29,7 @@ BuildRequires:  automake
 BuildRequires:  autoconf
 BuildRequires:  glib2-devel
 BuildRequires:  update-desktop-files
+BuildRequires:  hicolor-icon-theme
 Requires:       python-qrcode
 Requires:       python-Pillow
 
