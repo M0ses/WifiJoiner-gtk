@@ -28,6 +28,7 @@ BuildRequires:  intltool
 BuildRequires:  automake
 BuildRequires:  autoconf
 BuildRequires:  glib2-devel
+BuildRequires:  update-desktop-files
 Requires:       python-qrcode
 Requires:       python-Pillow
 
@@ -50,6 +51,8 @@ make %{?_smp_mflags}
 
 %install
 make install DESTDIR=%{buildroot} %{?_smp_mflags}
+
+%suse_update_desktop_file %{name} System
 
 %post
 %icon_theme_cache_post
