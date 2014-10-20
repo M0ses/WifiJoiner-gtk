@@ -68,6 +68,13 @@ cat %{buildroot}/usr/share/applications/wifijoiner-gtk.desktop
 %dir %{_defaultdocdir}/%{name}
 %dir %{_datarootdir}/wifijoiner-gtk
 %dir %{_datarootdir}/wifijoiner-gtk/ui
+%dir %{_datarootdir}/icons/hicolor
+%dir %{_datarootdir}/icons/hicolor/36x36
+%dir %{_datarootdir}/icons/hicolor/36x36/apps
+%dir %{_datarootdir}/icons/hicolor/48x48
+%dir %{_datarootdir}/icons/hicolor/48x48/apps
+%dir %{_datarootdir}/icons/hicolor/72x72
+%dir %{_datarootdir}/icons/hicolor/72x72/apps
 %{_bindir}/wifi-joiner
 %{_libexecdir}/python2.7/site-packages/wifi_joiner_gtk/wifi-joiner
 %{_defaultdocdir}/%{name}/AUTHORS
