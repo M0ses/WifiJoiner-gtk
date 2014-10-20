@@ -54,6 +54,8 @@ make install DESTDIR=%{buildroot} %{?_smp_mflags}
 
 %suse_update_desktop_file -r %{name} System Utility
 
+cat %{buildroot}/usr/share/applications/wifijoiner-gtk.desktop
+
 %post
 %icon_theme_cache_post
 
